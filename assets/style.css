@@ -27,3 +27,7 @@ th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
 .masuk { color: green; }
 .keluar { color: red; }
 .sukses { color: green; }
+
+.aksi form { display: inline; }
+.aksi button { margin-top: 0; padding: 4px 10px; }
+.aksi a { margin-right: 8px; }

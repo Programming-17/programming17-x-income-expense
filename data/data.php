@@ -23,18 +23,24 @@ function ambilSemuaTransaksi(): array
     return $hasil;
 }
 
-// Menyimpan 1 objek Transaksi ke file JSON
-function simpanTransaksi(Transaksi $transaksi): void
+// Menyimpan SEMUA transaksi sekaligus (menimpa isi file)
+function simpanSemuaTransaksi(array $semua): void
 {
-    $semua   = ambilSemuaTransaksi();
-    $semua[] = $transaksi;
-
     $data = [];
     foreach ($semua as $t) {
         $data[] = $t->toArray();
     }
 
     file_put_contents(FILE_DATA, json_encode($data, JSON_PRETTY_PRINT));
+}
+
+// Menyimpan 1 transaksi baru
+function simpanTransaksi(Transaksi $transaksi): void
+{
+    $semua   = ambilSemuaTransaksi();
+    $semua[] = $transaksi;
+
+    simpanSemuaTransaksi($semua);
 }
 
 // Mengubah angka jadi format Rupiah

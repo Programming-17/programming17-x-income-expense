@@ -44,8 +44,9 @@ require_once 'includes/header.php';
             <th>Kategori</th>
             <th>Keterangan</th>
             <th>Jumlah</th>
+            <th>Aksi</th>
         </tr>
-        <?php foreach ($tampil as $t): ?>
+        <?php foreach ($tampil as $id => $t): ?>
             <tr>
                 <td><?= htmlspecialchars($t->tanggal) ?></td>
                 <td><?= htmlspecialchars($t->jenis) ?></td>
@@ -53,6 +54,21 @@ require_once 'includes/header.php';
                 <td><?= htmlspecialchars($t->keterangan) ?></td>
                 <td class="<?= $t->jenis === 'pemasukan' ? 'masuk' : 'keluar' ?>">
                     <?= $t->jumlahRupiah() ?>
+                </td>
+                <td class="aksi">
+
+                    <!-- ============================================================
+                         TODO 6.3: Buat tombol Hapus
+                         Buat <form> dengan:
+                           - action="/data/proses-hapus.php"
+                           - method="POST"
+                           - input type="hidden" name="id" berisi nilai $id
+                           - button type="submit" bertuliskan Hapus
+                         Bonus: tambahkan konfirmasi dengan atribut
+                           onsubmit="return confirm('Hapus transaksi ini?')"
+                              pada <form>
+                         ============================================================ -->
+
                 </td>
             </tr>
         <?php endforeach; ?>
