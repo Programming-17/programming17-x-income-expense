@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "tanggal": "2026-11-22",
+        "jenis": "pengeluaran",
+        "kategori": "Uang Saku",
+        "keterangan": "Nasgor",
+        "jumlah": 15000
+    },
+    {
+        "tanggal": "2026-11-22",
+        "jenis": "pemasukan",
+        "kategori": "Uang Saku",
+        "keterangan": "Gaji Nov",
+        "jumlah": 1000000
+    }
+]
